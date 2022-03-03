@@ -224,5 +224,5 @@ export default class App extends Component {
         </Router>
       </Context.Provider>
     );
-  }
-}
+  };
+};

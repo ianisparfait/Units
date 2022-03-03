@@ -5,9 +5,10 @@
   "dependencies": {
     "@stripe/react-stripe-js": "^1.7.0",
     "@stripe/stripe-js": "^1.22.0",
-    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.0",
     "axios": "^0.25.0",
     "bulma": "^0.9.3",
     "express": "^4.17.2",
@@ -30,10 +31,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "coverage": "react-scripts test --coverage"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -46,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "jest-watch-typeahead": "^0.6.5"
   }
 }
