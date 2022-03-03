@@ -260,20 +260,8 @@ app.get('/api/commandes/:id', (request, response) => {
   }
 })
 
-/* login / register */
-app.get('/api/login/:email', (request, response) => {
-  const e = request.params.email;
-  const u = user.find(us => us.email === e);
-  if (u) {
-    response.json(u)
-    response.status(200).send('OK');
-  } else {
-    response.status(404).end();
-  }
-});
 
-
-const PORT = 3001
+const PORT = 3007;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })

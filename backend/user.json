@@ -180,6 +180,26 @@
           "qty": 1
         }
       ]
+    },
+    {
+      "id": "p8bnekxtnvkl0au0kmy",
+      "user_mail": "regular@example.com",
+      "user_name": "regular",
+      "type": "card",
+      "transaction_id": "tok_1KZBfJKyFYzC5CCacZiVZblp",
+      "card_id": "card_1KZBfJKyFYzC5CCaxLR9VUlX",
+      "country": "France",
+      "city": "Aix en provence",
+      "zip_code": "13100",
+      "adresse": "3 avenue des tamaris",
+      "amount": 359.56,
+      "products": [
+        {
+          "id": "yfdv31sgjeikyyhdizq",
+          "name": "Lit",
+          "qty": 1
+        }
+      ]
     }
   ]
 }
