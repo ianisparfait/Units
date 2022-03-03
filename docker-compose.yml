@@ -1,0 +1,17 @@
+version: "3"
+services:
+  nodejsapi:
+    privileged: true
+    ports:
+      - "3007:3007"
+    image: ./backend/api
+  jsonserver:
+    privileged: true
+    ports:
+      - "3001:3001"
+    image: ./backend
+  front:
+    privileged: true
+    ports:
+      - "3000:3000"
+    image: ./

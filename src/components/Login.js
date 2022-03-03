@@ -44,7 +44,7 @@ class Login extends Component {
               <div className="field">
                 <label className="label">Email: </label>
                 <input
-                  className="input"
+                  className="input signin_email_input"
                   type="email"
                   name="username"
                   onChange={this.handleChange}
@@ -53,7 +53,7 @@ class Login extends Component {
               <div className="field">
                 <label className="label">Mot de passe: </label>
                 <input
-                  className="input"
+                  className="input signin_pass_input"
                   type="password"
                   name="password"
                   onChange={this.handleChange}
@@ -64,7 +64,7 @@ class Login extends Component {
               )}
               <div className="field is-clearfix">
                 <button
-                  className="button is-primary is-outlined is-pulled-right"
+                  className="button is-primary is-outlined is-pulled-right signin_btn"
                 >
                   Connexion
                 </button>

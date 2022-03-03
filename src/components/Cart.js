@@ -33,7 +33,7 @@ const Cart = props => {
 
     for (let index = 0; index < arrayOfCodes.length; index++) {
       if (arrayOfCodes[index].code === promo) {
-        alert(`le code de - ${arrayOfCodes[index].reduction}% est appliqué`)
+        // alert(`le code de - ${arrayOfCodes[index].reduction}% est appliqué`)
         return setTPrice(totalPrice(arrayOfCodes[index].reduction)) ;
       }
     }
@@ -89,13 +89,13 @@ const Cart = props => {
                 </button>{" "}
                 {!props.context.user ? (<button onClick={handleCo} className="button is-success">Se connecter</button>) : (<Stripe price={tPrice == 0 ? totalPrice() : tPrice} datas={cart} />)}
               </div>
-              <span>Prix total de la commande: {tPrice == 0 ? totalPrice() : tPrice}€</span>
+              <span className="result_price">Prix total de la commande: {tPrice == 0 ? totalPrice() : tPrice}€</span>
             </div>
             <div className="column is-12 is-clearfix">
               <div className="column is-3 is-offset-9">
                 <label>Code de réduction</label>
-                <input className="input" type="text" placeholder="Entrez un code promotionel" onKeyUp={(e) => {handleKeyDown(e)}}/>
-                <button className="button" onClick={() => {setCouponPromo()}}>Appliquer le coupon</button>
+                <input className="input promo_input" type="text" placeholder="Entrez un code promotionel" onKeyUp={(e) => {handleKeyDown(e)}}/>
+                <button className="button add_promo_to_cart" onClick={() => {setCouponPromo()}}>Appliquer le coupon</button>
               </div>
             </div>
           </div>

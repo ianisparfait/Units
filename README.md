@@ -9,7 +9,7 @@
 ## Sans API
 
 1. Run `yarn install`
-2. Run `./node_modules/.bin/json-server-auth ./backend/db.json --port 3001` pour démarrer le serveur api local
+2. Run `./node_modules/.bin/json-server-auth ./backend/user.json --port 3001` pour démarrer le serveur api local
 3. Run `yarn start` pour démarrer le serveur de développement
 4. Se rendre sur [http://localhost:3000/](http://localhost:3000/)  
 

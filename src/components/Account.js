@@ -35,7 +35,7 @@ const Account = props => {
         <span className="title has-text-grey-light">
           {userKeys.get('email')}
         </span><br /><br />
-        <button onClick={() => {getCommands()}} className="button is-primary">Voir mes commandes</button><br /><br />
+        <button onClick={() => {getCommands()}} className="button is-primary get_my_orders">Voir mes commandes</button><br /><br />
         {commands != "" ? (
           <table className="table is-bordered is-striped" style={{textAlign: "center"}}>
             <thead>
@@ -77,6 +77,9 @@ const Account = props => {
               })}
             </tbody>
           </table>
+        ) : (<span></span>)}
+        {commands != "" ? (
+          <span className="number_of_orders">Nombre d'articles commandé: {commands.length}</span>
         ) : (<span></span>)}
       </div>
     </div>

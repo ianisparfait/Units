@@ -49,6 +49,7 @@ const MeubleItem = props => {
                     amount: 1
                   })
                 }
+                id={meuble.id}
               >
                 Ajouter au panier
               </button>

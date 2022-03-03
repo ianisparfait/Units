@@ -155,7 +155,7 @@ export default class App extends Component {
               <b className="navbar-item is-size-4 ">ABC</b>
               <label
                 role="button"
-                className="navbar-burger burger"
+                className=""
                 aria-label="menu"
                 aria-expanded="false"
                 data-target="navbarBasicExample"
@@ -170,7 +170,7 @@ export default class App extends Component {
               </label>
             </div>
               <div className={`navbar-menu ${
-                  this.state.showMenu ? "is-active" : ""
+                  !this.state.showMenu ? "is-active" : ""
                 }`}>
                 <Link to="/meubles" className="navbar-item">
                   Produits
@@ -185,17 +185,17 @@ export default class App extends Component {
                     Commandes
                   </Link>
                 )}
-                <Link to="/cart" className="navbar-item">
+                <Link to="/cart" className="navbar-item cart_link">
                   Panier
                   <span
-                    className="tag is-primary"
+                    className="tag is-primary number_of_cart"
                     style={{ marginLeft: "5px" }}
                   >
                     {Object.keys(this.state.cart).length}
                   </span>
                 </Link>
                 {!this.state.user ? (
-                  <Link to="/login" className="navbar-item">
+                  <Link to="/login" className="navbar-item signin_link">
                     Connexion
                   </Link>
                 ) : (
@@ -204,7 +204,7 @@ export default class App extends Component {
                   </Link>
                 )}
                 {this.state.user &&
-                  <Link to="/account" className="navbar-item">
+                  <Link to="/account" className="navbar-item account_link">
                     Compte
                   </Link>
                 }
