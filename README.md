@@ -1,5 +1,7 @@
 # Ecommerce en React
 
+![Node CI](https://github.com/ianisparfait/Units/workflows/Node%20CI/badge.svg)
+
 ## Besoins
 
 * [Node.js](https://nodejs.org/en/)
