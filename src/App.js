@@ -34,9 +34,9 @@ export default class App extends Component {
     let user = localStorage.getItem("user");
     let cart = localStorage.getItem("cart");
 
-    const meubles = await axios.get(`http://localhost:3001/meubles`);
-    const promos = await axios.get(`http://localhost:3001/promos`)
-    const commandes = await axios.get(`http://localhost:3001/commandes`)
+    const meubles = await axios.get(`http://localhost:3007/api/meubles`);
+    const promos = await axios.get(`http://localhost:3007/api/promos`)
+    const commandes = await axios.get(`http://localhost:3007/api/commandes`)
     user = user ? JSON.parse(user) : null;
     cart = cart? JSON.parse(cart) : {};
 

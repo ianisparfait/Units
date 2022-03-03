@@ -28,7 +28,7 @@ const Cart = props => {
   };
 
   async function setCouponPromo() {
-    const getCodes = await axios.get(`http://localhost:3001/promos`),
+    const getCodes = await axios.get(`http://localhost:3007/api/promos`),
           arrayOfCodes = getCodes.data;
 
     for (let index = 0; index < arrayOfCodes.length; index++) {
