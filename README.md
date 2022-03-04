@@ -1,10 +1,11 @@
 # Ecommerce en React
 
 ![Node CI](https://github.com/ianisparfait/Units/workflows/Node%20CI/badge.svg)
-
+Ce badge détermine si les tests du projet sont correcte et passé. Elles sont testé par Github eux-même qui évite les "bullshit".
 ## Besoins
 
 * [Node.js](https://nodejs.org/en/)
+* [Yarn](https://yarnpkg.com/)
 * [React](https://fr.reactjs.org/)
 
 ## Setup
@@ -22,7 +23,21 @@
 
 
 ### Connexion user:  
-      - Email: `regular@example.com` ou `admin@example.com`  
-      - Mot de passe: `password`
+- Email: `regular@example.com` ou `admin@example.com`  
+- Mot de passe: `password`
 
 #### Utilisation de l'API externe: Open Weather et affiche l'emplacement + la température
+
+
+## Run tests
+### Frontend
+1. Placez vous à la racine du projet
+2. `yarn test`
+
+### Backend
+1. cd backend/api
+2. `yarn test`
+
+### Cypress
+1. Placez vous à la racine du projet
+2. `yarn cypress:open`
