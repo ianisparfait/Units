@@ -1,6 +1,6 @@
 # Ecommerce en React
 
-![Node CI](https://github.com/ianisparfait/Units/workflows/Node%20CI/badge.svg)
+![Node CI](https://github.com/ianisparfait/Units/workflows/Node%20CI/badge.svg)  
 Ce badge détermine si les tests du projet sont correcte et passé. Elles sont testé par Github eux-même qui évite les "bullshit".
 ## Besoins
 
