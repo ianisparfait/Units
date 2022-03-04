@@ -11,8 +11,6 @@ const Cart = props => {
   const { cart } = props.context;
   const cartKeys = Object.keys(cart || {});
 
-  console.log()
-
   const totalPrice = (pr) => {
     let c = cart
     let total = 0;
@@ -33,7 +31,6 @@ const Cart = props => {
 
     for (let index = 0; index < arrayOfCodes.length; index++) {
       if (arrayOfCodes[index].code === promo) {
-        // alert(`le code de - ${arrayOfCodes[index].reduction}% est appliqué`)
         return setTPrice(totalPrice(arrayOfCodes[index].reduction)) ;
       }
     }

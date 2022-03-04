@@ -107,6 +107,7 @@ export default class App extends Component {
   };
 
   checkout = () => {
+    console.log('call checkout function')
     if (!this.state.user) {
       this.routerRef.current.history.push("/login");
       return;

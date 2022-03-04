@@ -1,6 +1,6 @@
-const express = require('express')
-const app = express()
-app.use(express.json())
+const express = require('express');
+const app = express();
+app.use(express.json());
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -219,7 +219,6 @@ app.get('/api/users/:id', (request, response) => {
   const id = Number(request.params.id)
   const person = user.find(p => p.id === id)
 
-
   if (person) {
     response.json(person)
   } else {
@@ -229,7 +228,6 @@ app.get('/api/users/:id', (request, response) => {
 app.get('/api/meubles/:id', (request, response) => {
   const id = Number(request.params.id)
   const meuble = meubles.find(p => p.id === id)
-
 
   if (meuble) {
     response.json(meuble)
@@ -241,7 +239,6 @@ app.get('/api/promos/:id', (request, response) => {
   const id = Number(request.params.id)
   const promo = promos.find(p => p.id === id)
 
-
   if (promo) {
     response.json(promo)
   } else {
@@ -252,14 +249,18 @@ app.get('/api/commandes/:id', (request, response) => {
   const id = Number(request.params.id)
   const commande = commandes.find(p => p.id === id)
 
-
   if (commande) {
     response.json(commande)
   } else {
     response.status(404).end()
   }
-})
+});
 
+module.exports = {
+  TestMeubles: function (datas) {
+    return typeof datas == [] ? true : false;
+  },
+};
 
 const PORT = 3007;
 app.listen(PORT, () => {

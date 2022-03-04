@@ -5,7 +5,8 @@ import axios from 'axios';
 const Stripe = ({ price, datas }) => {
   const priceForUser = parseFloat(price.toFixed(2));
   const priceForStripe = price * 100;
-  const publishableKey = 'pk_test_51KFEm7KyFYzC5CCa4uxsW5y7kO81hZvpKoKoDNbjZwOR0Le3eBG93z98GODyzsgfpkBHV4qWk8MBb9ruorvGuTCh00pYTURmRt';
+  const publishableKey = 'pk_test_51KFEm7KyFYzC5CCaOlJHGhwYLUtIhljpd8Ae45rxmkjAxvcDiVy0dmslxP3bpvOT9haZbLch1Kl6VsHl1TvITxTW00hjU8e98J';
+  var result;
 
   const onToken = token => {
     let object = {
@@ -39,8 +40,23 @@ const Stripe = ({ price, datas }) => {
   };
 
   async function handlePost(obj) {
-    await axios.post('http://localhost:3001/commandes', obj).then(res => {console.log(res)})
+    await axios.post('http://localhost:3001/commandes', obj).then(res => {decrement(result = res)})
   }
+  const decrement = async (datas) => {
+    let prods = datas.data.products
+
+    for (let index = 0; index < prods.length; index++) {
+      const getMeubles = await axios.get('http://localhost:3007/meubles'),
+          arrayOfMeubles = getMeubles.data;
+
+      for (let index = 0; index < arrayOfMeubles.length; index++) {
+        if (arrayOfMeubles[index] == prods[index].id) {
+          arrayOfMeubles[index].amount -= prods[index].qty
+        }
+      }
+    }
+  };
+
 
   return (
     <StripeCheckout
