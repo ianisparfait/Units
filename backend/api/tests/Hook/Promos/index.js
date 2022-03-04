@@ -17,7 +17,8 @@ app.use(function (req, res, next) {
 
 const Promos = async () => {
   app.get('/api/promos', async (request, response) => {
-    return await axios.get('http://localhost:3001/promos').then(response => response.status)
+    const r = await axios.get('http://localhost:3001/promos');
+    return response.json(r.data);
   })
 };
 
