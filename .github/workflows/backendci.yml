@@ -36,7 +36,7 @@ jobs:
         working-directory: ./backend/api
 
       - name: Run servers and test
-        run: backend:ci
+        run: yarn backendci
 
       # - name: Run Back API
       #   run: yarn start
