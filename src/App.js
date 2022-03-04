@@ -84,6 +84,7 @@ export default class App extends Component {
     let meubles = this.state.meubles.slice();
     meubles.push(meuble);
     this.setState({ meubles }, () => callback && callback());
+    return true;
   };
 
   addToCart = cartItem => {
@@ -98,13 +99,16 @@ export default class App extends Component {
     }
     localStorage.setItem("cart", JSON.stringify(cart));
     this.setState({ cart });
+    return true;
   };
 
   removeFromCart = cartItemId => {
+    console.log(cartItemId)
     let cart = this.state.cart;
     delete cart[cartItemId];
     localStorage.setItem("cart", JSON.stringify(cart));
     this.setState({ cart });
+    return true;
   };
 
   clearCart = () => {
@@ -112,16 +116,6 @@ export default class App extends Component {
     localStorage.removeItem("cart");
     this.setState({ cart });
   };
-
-  getWeather = async (location) => {
-    try {
-      const response = await axios.get(API_URL(location.coords.latitude, location.coords.longitude))
-
-      this.state.weather = response.data
-    } catch(e) {
-      console.log('Erreur dans getWeather', e)
-    }
-  }
 
   checkout = () => {
     console.log('call checkout function')
