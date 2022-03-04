@@ -40,9 +40,9 @@ export default class App extends Component {
     let cart = localStorage.getItem("cart");
 
     const meubles = await axios.get(`http://localhost:3007/api/meubles`);
-    const promos = await axios.get(`http://localhost:3007/api/promos`)
-    const commandes = await axios.get(`http://localhost:3007/api/commandes`)
-    const weather = await axios.get('https://api.openweathermap.org/data/2.5/forecast?lat=43.529743&lon=5.447427&appid=ef571cfdaab632e707a801b1e2d336e5&lang=fr&units=metric')
+    const promos = await axios.get(`http://localhost:3007/api/promos`);
+    const commandes = await axios.get(`http://localhost:3007/api/commandes`);
+    const weather = await axios.get('https://api.openweathermap.org/data/2.5/forecast?lat=43.529743&lon=5.447427&appid=ef571cfdaab632e707a801b1e2d336e5&lang=fr&units=metric');
 
     user = user ? JSON.parse(user) : null;
     cart = cart? JSON.parse(cart) : {};
@@ -64,15 +64,15 @@ export default class App extends Component {
         email,
         token: res.data.accessToken,
         accessLevel: email === 'admin@example.com' ? 0 : 1
-      }
+      };
 
       this.setState({ user });
       localStorage.setItem("user", JSON.stringify(user));
       return true;
     } else {
       return false;
-    }
-  }
+    };
+  };
 
   logout = e => {
     e.preventDefault();

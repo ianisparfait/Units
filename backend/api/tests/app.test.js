@@ -59,4 +59,4 @@ test('Products API', () => {
   return products().then(data => {
     expect(data).toContainEqual(TestProducts);
   });
-})
+});
