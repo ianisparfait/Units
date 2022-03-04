@@ -34,7 +34,7 @@
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
     "coverage": "react-scripts test --coverage",
-    "backend:ci": "run-server-and-tests ./node_modules/.bin/json-server-auth ./backend/bdd.json --port 3001 start ./backend/api test ./backend/api"
+    "backendci": "run-server-and-tests ./node_modules/.bin/json-server-auth ./backend/bdd.json --port 3001 start ./backend/api test ./backend/api"
   },
   "eslintConfig": {
     "extends": [
