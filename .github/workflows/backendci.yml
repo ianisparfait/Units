@@ -31,16 +31,16 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Run bdd
-        run: ./node_modules/.bin/json-server-auth ./backend/bdd.json --port 3001
+      # - name: Run bdd
+      #   run: ./node_modules/.bin/json-server-auth ./backend/bdd.json --port 3001
 
       - name: Install backend dependencies
         run: yarn install
         working-directory: ./backend/api
 
-      - name: Run Back API
-        run: yarn start
-        working-directory: ./backend/api
+      # - name: Run Back API
+      #   run: yarn start
+      #   working-directory: ./backend/api
 
       - name: Run test
         run: yarn test
