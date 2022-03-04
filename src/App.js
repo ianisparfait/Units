@@ -14,6 +14,9 @@ import Stripe from './components/Stripe';
 
 import Context from "./Context";
 
+const API_ID = "ef571cfdaab632e707a801b1e2d336e5"
+const API_URL = (lat, lon) => `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_ID}&lang=fr&units=metric`
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -24,10 +27,12 @@ export default class App extends Component {
       productsInCart: null,
       promos: [],
       commandes: [],
+      weather: null,
     };
     this.routerRef = React.createRef();
 
     this.numberCartItems = 0;
+    this.city = null;
   }
 
   async componentDidMount() {
@@ -37,10 +42,12 @@ export default class App extends Component {
     const meubles = await axios.get(`http://localhost:3007/api/meubles`);
     const promos = await axios.get(`http://localhost:3007/api/promos`)
     const commandes = await axios.get(`http://localhost:3007/api/commandes`)
+    const weather = await axios.get('https://api.openweathermap.org/data/2.5/forecast?lat=43.529743&lon=5.447427&appid=ef571cfdaab632e707a801b1e2d336e5&lang=fr&units=metric')
+
     user = user ? JSON.parse(user) : null;
     cart = cart? JSON.parse(cart) : {};
 
-    this.setState({ user,  meubles: meubles.data, promos: promos.data, commandes: commandes.data, cart });
+    this.setState({ user,  meubles: meubles.data, promos: promos.data, commandes: commandes.data, cart, weather });
   }
 
   login = async (email, password) => {
@@ -105,6 +112,16 @@ export default class App extends Component {
     localStorage.removeItem("cart");
     this.setState({ cart });
   };
+
+  getWeather = async (location) => {
+    try {
+      const response = await axios.get(API_URL(location.coords.latitude, location.coords.longitude))
+
+      this.state.weather = response.data
+    } catch(e) {
+      console.log('Erreur dans getWeather', e)
+    }
+  }
 
   checkout = () => {
     console.log('call checkout function')
@@ -210,6 +227,8 @@ export default class App extends Component {
                   </Link>
                 }
               </div>
+              <span className="navbar-item" style={{fontSize: '11px'}}>{this.state.weather ? this.state.weather.data.city.name : ''}</span>
+              <span className="navbar-item" style={{fontSize: '11px'}}>{this.state.weather ? Math.round(this.state.weather.data.list[0].main.temp) : ''}°</span>
             </nav>
             <Switch>
               <Route exact path="/" component={ProductList} />
