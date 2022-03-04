@@ -143,6 +143,12 @@ export default class App extends Component {
     this.state.user
   );
 
+  callOpenWeather = async (urlAPI) => {
+    const weather = await axios.get(urlAPI);
+
+    return weather !== null || undefined ? true : false;
+  }
+
   render() {
     return (
       <Context.Provider

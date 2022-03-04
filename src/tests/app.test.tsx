@@ -46,3 +46,10 @@ test("remove from cart", () => {
 test("add product", () => {
   expect(classApp.addMeuble(testAddProduct)).toEqual(true);
 });
+
+
+test('API Open Weather', () => {
+  return classApp.callOpenWeather("https://api.openweathermap.org/data/2.5/forecast?lat=43.529743&lon=5.447427&appid=ef571cfdaab632e707a801b1e2d336e5&lang=fr&units=metric").then(data => {
+    expect(data).toBe(true);
+  });
+});
