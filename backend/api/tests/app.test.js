@@ -1,9 +1,7 @@
-const assert = require('assert').strict;
-require('jest');
-const app = require('./../index');
+const promos = require('./Hook/Promos');
 
-describe("test API Nodejs", function() {
-  it("meubles", function() {
-    expect(app.TestMeubles([])).toEqual(true)
-  });
+it("Async test", async done => {
+  const r = await promos();
+  expect(r).toEqual(true);
+  done();
 });
