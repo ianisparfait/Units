@@ -9,7 +9,7 @@ Ce badge détermine si les tests du projet sont correcte et passé. Elles sont t
 * [React](https://fr.reactjs.org/)
 
 ## Setup
-## Auth API & Frontend
+## Bdd API & Frontend
 
 1. A la racine du projet; Run `yarn install`
 2. Run `./node_modules/.bin/json-server-auth ./backend/bdd.json --port 3001` pour démarrer le serveur auth local
